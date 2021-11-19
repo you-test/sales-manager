@@ -38,9 +38,9 @@
         </tr>
         <tr>
             <th></th>
-            <th>50,000</th>
-            <th>5,000</th>
-            <th>5,000</th>
+            <th><?= $totalSum['sales']; ?></th>
+            <th><?= $totalSum['food']; ?></th>
+            <th><?= $totalSum['labor']; ?></th>
         </tr>
         <tr>
             <th></th>

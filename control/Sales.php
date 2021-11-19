@@ -22,6 +22,23 @@ class Sales
 
             return $sales_data;
         }
+    }
 
+    // 累計値取得
+    public function totalSalesShow($sales_data)
+    {
+        $totalSum = [
+            'sales' => 0,
+            'food' => 0,
+            'labor' => 0,
+        ];
+
+        for ($i = 0; $i < count($sales_data); $i++) {
+            $totalSum['sales'] += $sales_data[$i]['sales_amount'];
+            $totalSum['food'] += $sales_data[$i]['food_costs'];
+            $totalSum['labor'] += $sales_data[$i]['labor_costs'];
+        }
+
+        return $totalSum;
     }
 }
