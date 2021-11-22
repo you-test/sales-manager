@@ -19,9 +19,9 @@
         <?php foreach ($sales_data as $sales_daily): ?>
             <tr>
                 <th><?= $sales_daily['sales_date']; ?></th>
-                <th><?= $sales_daily['sales_amount']; ?></th>
-                <th><?= $sales_daily['food_costs']; ?></th>
-                <th><?= $sales_daily['labor_costs']; ?></th>
+                <th><?= number_format($sales_daily['sales_amount']); ?></th>
+                <th><?= number_format($sales_daily['food_costs']); ?></th>
+                <th><?= number_format($sales_daily['labor_costs']); ?></th>
                 <th>
                     <a href="update.php">修正</a>
                     <a href="delete.php">削除</a>
@@ -38,9 +38,9 @@
         </tr>
         <tr>
             <th></th>
-            <th><?= $totalSum['sales']; ?></th>
-            <th><?= $totalSum['food']; ?></th>
-            <th><?= $totalSum['labor']; ?></th>
+            <th><?= number_format($totalSum['sales']); ?></th>
+            <th><?= number_format($totalSum['food']); ?></th>
+            <th><?= number_format($totalSum['labor']); ?></th>
         </tr>
         <tr>
             <th></th>
@@ -51,8 +51,8 @@
         <tr>
             <th></th>
             <th></th>
-            <th>20%</th>
-            <th>20%</th>
+            <th><?= $fRatio ?>%</th>
+            <th><?= $lRatio ?>%</th>
         </tr>
     </tfoot>
 </table>

@@ -15,6 +15,8 @@ print_r($sales_data);
 
 // 累計表示
 $totalSum = $sales->totalSalesShow($sales_data);
+// 原価率・人件費率
+list($fRatio, $lRatio) = $sales->flRatio($totalSum);
 
 $title = '月間一覧';
 $links = [

@@ -12,6 +12,8 @@ class Sales
     // データの表示
     public function showSales()
     {
+        $sales_data = [];
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $month_array = explode('-', $_POST['month']);
             $month = implode($month_array);
@@ -19,9 +21,9 @@ class Sales
             $statement = $this->pdo->query("SELECT * FROM sales WHERE DATE_FORMAT(sales_date, '%Y%m') = {$month} ORDER BY sales_date ASC");
             $statement->execute();
             $sales_data = $statement->fetchAll();
-
-            return $sales_data;
         }
+
+        return $sales_data;
     }
 
     // 累計値取得
@@ -40,5 +42,36 @@ class Sales
         }
 
         return $totalSum;
+    }
+
+    // 原価率・人件費計算
+    public function flRatio($totalSum) {
+        if (!isset($totalSum) || $totalSum['sales'] === 0) {
+            $fRatio = '-';
+            $lRatio = '-';
+            return array($fRatio, $lRatio);
+        }
+
+        $fRatio = round(($totalSum['food'] / $totalSum['sales']) * 100, 1);
+        $lRatio = round(($totalSum['labor'] / $totalSum['sales']) * 100, 1);
+
+        return array($fRatio, $lRatio);
+    }
+
+    // データの新規登録
+    public function register() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $sales_date = $_POST['sales_date'];
+            $sales_amount = $_POST['sales_amount'];
+            $food_costs = $_POST['food_costs'];
+            $labor_costs = $_POST['labor_costs'];
+
+            $statement = $this->pdo->prepare("INSERT INTO sales (sales_date, sales_amount, food_costs, labor_costs) VALUES (:sales_date, :sales_amount, :food_costs, :labor_costs)");
+            $statement->bindValue('sales_date', $sales_date);
+            $statement->bindValue('sales_amount', $sales_amount);
+            $statement->bindValue('food_costs', $food_costs);
+            $statement->bindValue('labor_costs', $labor_costs);
+            $statement->execute();
+        }
     }
 }
