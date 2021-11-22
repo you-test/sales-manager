@@ -74,4 +74,33 @@ class Sales
             $statement->execute();
         }
     }
+
+    // データ更新画面の既存データ取得
+    public function showUpdate() {
+        $id = $_GET['id'];
+
+        $statement = $this->pdo->query("SELECT sales_date, sales_amount, food_costs, labor_costs FROM sales WHERE id = {$id}");
+        $statement->execute();
+        $sales_daily = $statement->fetch();
+
+        return $sales_daily;
+    }
+
+    public function update() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $sales_date = $_POST['sales_date'];
+            $sales_amount = $_POST['sales_amount'];
+            $food_costs = $_POST['food_costs'];
+            $labor_costs = $_POST['labor_costs'];
+
+            $statement = $this->pdo->prepare("UPDATE sales SET sales_amount = :sales_amount, food_costs = :food_costs, labor_costs = :labor_costs WHERE sales_date = :sales_date");
+            $statement->bindValue('sales_amount', $sales_amount);
+            $statement->bindValue('food_costs', $food_costs);
+            $statement->bindValue('labor_costs', $labor_costs);
+            $statement->bindValue('sales_date', $sales_date);
+            $statement->execute();
+
+            header('Location: list.php');
+        }
+    }
 }
