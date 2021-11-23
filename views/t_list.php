@@ -23,8 +23,11 @@
                 <th><?= number_format($sales_daily['food_costs']); ?></th>
                 <th><?= number_format($sales_daily['labor_costs']); ?></th>
                 <th>
-                    <a href="<?PHP echo 'update.php?id=' . $sales_daily['id']; ?>">修正</a>
-                    <a href="delete.php">削除</a>
+                    <form method="POST">
+                        <input type="hidden" name="id" value="<?= $sales_daily['id']; ?>">
+                        <button type="submit" formaction="fix.php">更新</button>
+                        <button type="submit" formaction="delete.php">削除</button>
+                    </form>
                 </th>
             </tr>
         <?php endforeach; ?>

@@ -18,7 +18,7 @@ class Sales
             $month_array = explode('-', $_POST['month']);
             $month = implode($month_array);
 
-            $statement = $this->pdo->query("SELECT * FROM sales WHERE DATE_FORMAT(sales_date, '%Y%m') = {$month} ORDER BY sales_date ASC");
+            $statement = $this->pdo->query("SELECT * FROM sales WHERE DATE_FORMAT(sales_date, '%Y%m') = $month ORDER BY sales_date ASC");
             $statement->execute();
             $sales_data = $statement->fetchAll();
         }
@@ -76,16 +76,15 @@ class Sales
     }
 
     // データ更新画面の既存データ取得
-    public function showUpdate() {
-        $id = $_GET['id'];
-
-        $statement = $this->pdo->query("SELECT sales_date, sales_amount, food_costs, labor_costs FROM sales WHERE id = {$id}");
+    public function showUpdate($id) {
+        $statement = $this->pdo->query("SELECT sales_date, sales_amount, food_costs, labor_costs FROM sales WHERE id = $id");
         $statement->execute();
         $sales_daily = $statement->fetch();
 
         return $sales_daily;
     }
 
+    // データの更新
     public function update() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $sales_date = $_POST['sales_date'];
@@ -102,5 +101,13 @@ class Sales
 
             header('Location: list.php');
         }
+    }
+
+    // データの削除
+    public function delete($id) {
+        $statement = $this->pdo->query("DELETE FROM sales WHERE id = $id");
+        $statement->execute();
+
+        header('Location: list.php');
     }
 }

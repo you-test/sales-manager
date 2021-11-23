@@ -1,9 +1,9 @@
-<form action="update.php" method="POST">
+<form method="POST">
     <table>
         <tr>
             <td>日付</td>
             <td><?= $sales_daily['sales_date']; ?></td>
-            <input type="hidden" name="sales_date" value="<?= $sales_daily['sales_date'] ?>">
+            <input type="hidden" name="sales_date" value="<?= $sales_daily['sales_date']; ?>">
         </tr>
         <tr>
             <td>売上高</td>
@@ -18,6 +18,7 @@
             <td><input type="text" name="labor_costs" value="<?= $sales_daily['labor_costs']; ?>"></td>
         </tr>
     </table>
-    <button type="submit">更新</button>
-    <button type="submit">削除</button>
+    <input type="hidden" name="id" value="<?= $id ?>">
+    <button type="submit" formaction="update.php">更新</button>
+    <button type="submit" formaction="delete.php">削除</button>
 </form>
