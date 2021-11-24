@@ -9,9 +9,11 @@
 <body>
     <header>
         <h1>Sales Manager</h1>
-        <?php foreach ($links as $link_name => $link_url): ?>
-            <a href="<?php echo $link_url; ?>"><?php echo $link_name ?></a>
-        <?php endforeach; ?>
+        <nav>
+            <?php foreach ($links as $link_name => $link_url): ?>
+                <a href="<?php echo $link_url; ?>"><?php echo $link_name ?></a>
+            <?php endforeach; ?>
+        </nav>
     </header>
     <div class="container">
         <h2 class="title"><?php echo $title; ?></h2>
