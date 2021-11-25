@@ -20,24 +20,7 @@ h2 {
   font-weight: normal;
 }
 
-table {
-  border: solid 1px black;
-  display: inline-block;
-  width: 100%;
-  background: #fff;
-  border-spacing: 0;
 
-  th {
-    border: solid 1px black;
-    font-weight: normal;
-  }
-}
-
-button {
-  width: 50px;
-  background: #fff;
-  border-radius: 3px;
-}
 
 a {
   display: inline-block;
@@ -49,6 +32,10 @@ a {
   text-align: center;
   box-shadow: 0 5px 5px grey;
   border-radius: 3px;
+}
+
+table {
+  box-shadow: 0 5px 5px grey;
 }
 
 .container {
@@ -66,6 +53,17 @@ a {
 
 .table-white {
   background: #fff;
+}
+
+.btn {
+  width: 100px;
+  padding: 2px;
+  color: #fff;
+  background: #00B0F0;
+  text-align: center;
+  box-shadow: 0 5px 5px grey;
+  border: none;
+  border-radius: 3px;
 }
 
 // header
@@ -96,14 +94,66 @@ header {
   .register-link {
     display: block;
   }
+
+  button {
+    width: 50px;
+    background: #fff;
+    border-radius: 3px;
+  }
 }
 
 .list-wrapper {
   width: 550px;
   margin: 0 auto;
 
+  table {
+    display: inline-block;
+    width: 100%;
+    background: grey;
+    border-spacing: 0;
+    border: solid 0.5px black;
+
+    th {
+      font-weight: normal;
+      border-bottom: solid 0.5px black;
+      border-right: solid 0.5px black;
+      padding: 2px;
+    }
+
+    button {
+      width: 50px;
+      background: #fff;
+      border-radius: 3px;
+    }
+  }
+
   .table-title th,
   .table-date {
     color: #fff;
   }
+
+  tfoot {
+    tr:last-child th {
+      border-bottom: none;
+    }
+  }
+}
+
+// register
+.register-form {
+  text-align: center;
+
+  table {
+    margin: 0 auto 10px;
+    padding: 5px;
+    border: solid 0.5px black;
+    color: #fff;
+    background: grey;
+    border-spacing: 5px;
+
+    th {
+      line-height: 20px;
+    }
+  }
+
 }

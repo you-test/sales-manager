@@ -1,21 +1,21 @@
-<form action="register.php" method="POST">
+<form action="register.php" method="POST" class="register-form">
     <table>
         <tr>
-            <td>日付</td>
-            <td><input type="date" name="sales_date"></td>
+            <th>日付</th>
+            <th><input type="date" name="sales_date"></th>
         </tr>
         <tr>
-            <td>売上高</td>
-            <td><input type="text" name="sales_amount"></td>
+            <th>売上高</th>
+            <th><input type="text" name="sales_amount"></th>
         </tr>
         <tr>
-            <td>仕入れ</td>
-            <td><input type="text" name="food_costs"></td>
+            <th>仕入れ</th>
+            <th><input type="text" name="food_costs"></th>
         </tr>
         <tr>
-            <td>人件費</td>
-            <td><input type="text" name="labor_costs"></td>
+            <th>人件費</th>
+            <th><input type="text" name="labor_costs"></th>
         </tr>
     </table>
-    <button type="submit">データの登録</button>
+    <button type="submit" class="btn">データの登録</button>
 </form>
