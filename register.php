@@ -10,7 +10,6 @@ $pdo = Database::dbConnect();
 // データの登録
 $sales = new Sales($pdo);
 $sales->register();
-var_dump($sales);
 
 // テンプレート読み込み
 $title = '売上データ新規登録';

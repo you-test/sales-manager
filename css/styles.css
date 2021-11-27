@@ -7,11 +7,13 @@ body {
   font-size: 1.6rem;
   background: #f8fafc;
   letter-spacing: 0.1em;
+  margin: 0;
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: normal;
+  margin: 0;
 }
 
 h2 {
@@ -21,7 +23,9 @@ h2 {
 
 a {
   display: inline-block;
-  width: 80px;
+  width: 100px;
+  height: 35px;
+  line-height: 35px;
   padding: 2px;
   text-decoration: none;
   color: #fff;
@@ -36,6 +40,7 @@ a {
 }
 
 .container h2 {
+  margin: 40px;
   text-align: center;
 }
 
@@ -45,23 +50,29 @@ a {
 
 .btn {
   width: 100px;
+  height: 35px;
   padding: 2px;
   color: #fff;
   background: #00B0F0;
   text-align: center;
-  -webkit-box-shadow: 0 5px 5px grey;
-          box-shadow: 0 5px 5px grey;
   border: none;
   border-radius: 3px;
 }
 
 header {
-  width: 800px;
-  margin: 0 auto;
-}
-
-header h1 {
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 5%;
+  background: #fff;
+  -webkit-box-shadow: 0 5px 10px #ebe5e4;
+          box-shadow: 0 5px 10px #ebe5e4;
 }
 
 header nav {
@@ -72,8 +83,16 @@ header nav a {
   margin-left: 10px;
 }
 
+.top-wrapper a {
+  display: block;
+  margin: 0 auto 10px;
+  font-size: 1.8rem;
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+}
+
 .select-term {
-  width: 550px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -94,22 +113,16 @@ header nav a {
 }
 
 .list-wrapper {
-  width: 550px;
   margin: 0 auto;
 }
 
-.list-wrapper table {
-  display: inline-block;
-  width: 100%;
-  border-spacing: 3px;
-  border: solid 0.5px #dee2e6;
-}
-
 .list-wrapper table th, .list-wrapper table td {
+  width: 130px;
+  height: 30px;
   font-weight: normal;
-  border-bottom: solid 0.5px #dee2e6;
-  border-right: solid 0.5px #dee2e6;
+  border: solid 0.5px #dee2e6;
   padding: 2px;
+  text-align: right;
 }
 
 .list-wrapper table button {
@@ -123,17 +136,31 @@ header nav a {
   background: #343a40;
 }
 
+.list-wrapper .table-title th {
+  text-align: center;
+}
+
 .list-wrapper tfoot tr:last-child th {
   border-bottom: none;
 }
 
-.register-form {
-  text-align: center;
+.register-form > div {
+  width: 300px;
+  margin: 0 auto;
 }
 
-.register-form table {
-  margin: 0 auto 10px;
+.register-form > div table {
   padding: 5px;
-  border: solid 0.5px #dee2e6;
-  border-spacing: 3px;
+}
+
+.register-form > div table td {
+  padding: 5px;
+}
+
+.register-form > div table input {
+  height: 30px;
+}
+
+.register-form > div .btn {
+  margin-left: 75px;
 }

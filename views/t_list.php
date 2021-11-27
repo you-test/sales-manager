@@ -7,6 +7,9 @@
     <a href="register.php" class="register-link">新規登録</a>
 </div>
 <div class="list-wrapper">
+    <?php if (count($sales_data) === 0): ?>
+        <?= '<div>[ データがありません ]</div>'; ?>
+    <?php else: ?>
     <table>
         <thead>
             <tr class="table-title">
@@ -63,4 +66,5 @@
             </tr>
         </tfoot>
     </table>
+    <?php endif; ?>
 </div>
