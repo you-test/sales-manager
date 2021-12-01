@@ -59,6 +59,11 @@ a {
   border-radius: 3px;
 }
 
+.validate {
+  color: red;
+  padding-left: 10px;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -144,23 +149,36 @@ header nav a {
   border-bottom: none;
 }
 
-.register-form > div {
+.register-form > div,
+.fix-form > div {
   width: 300px;
   margin: 0 auto;
 }
 
-.register-form > div table {
+.register-form > div table,
+.fix-form > div table {
   padding: 5px;
 }
 
-.register-form > div table td {
+.register-form > div table td,
+.fix-form > div table td {
   padding: 5px;
 }
 
-.register-form > div table input {
+.register-form > div table input,
+.fix-form > div table input {
   height: 30px;
 }
 
-.register-form > div .btn {
+.register-form > div .btn,
+.fix-form > div .btn {
   margin-left: 75px;
+}
+
+.fix-form .btn {
+  width: 60px;
+}
+
+.fix-form .btn:last-child {
+  margin-left: 15px;
 }

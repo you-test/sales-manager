@@ -9,7 +9,7 @@ require_once 'control/Sales.php';
 $pdo = Database::dbConnect();
 
 // データ取得
-$sales = new Sales($pdo);
+$sales = new Sales($pdo, $validation);
 $sales_data = $sales->showSales();
 
 // 累計表示

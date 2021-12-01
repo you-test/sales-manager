@@ -62,6 +62,11 @@ a {
   border-radius: 3px;
 }
 
+.validate {
+  color: red;
+  padding-left: 10px;
+}
+
 // header
 header {
   display: flex;
@@ -146,8 +151,9 @@ header {
   }
 }
 
-// register
-.register-form {
+// register, fix
+.register-form,
+.fix-form {
   &>div {
     width: 300px;
     margin: 0 auto;
@@ -166,6 +172,17 @@ header {
 
     .btn {
       margin-left: 75px;
+    }
+  }
+}
+
+// fix
+.fix-form {
+  .btn {
+    width: 60px;
+
+    &:last-child {
+      margin-left: 15px;
     }
   }
 }

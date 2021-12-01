@@ -66,12 +66,17 @@ class Sales
             $food_costs = $_POST['food_costs'];
             $labor_costs = $_POST['labor_costs'];
 
+            if ($sales_date === '') {
+                return '日付を選択してください。';
+            }
+
             $statement = $this->pdo->prepare("INSERT INTO sales (sales_date, sales_amount, food_costs, labor_costs) VALUES (:sales_date, :sales_amount, :food_costs, :labor_costs)");
             $statement->bindValue('sales_date', $sales_date);
             $statement->bindValue('sales_amount', $sales_amount);
             $statement->bindValue('food_costs', $food_costs);
             $statement->bindValue('labor_costs', $labor_costs);
             $statement->execute();
+
         }
     }
 
