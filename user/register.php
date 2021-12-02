@@ -5,16 +5,17 @@ require_once '../common/Database.php';
 require_once '../common/Utiles.php';
 require_once '../control/Users.php';
 
-// データの取得
 $pdo = Database::dbConnect();
 $users = new Users($pdo);
-$usersdata = $users->getUsersData();
+
+// ユーザー登録処理
+$users->userRegister();
 
 // テンプレートの読み込み
-$title = 'ユーザー一覧';
+$title = 'ユーザー登録';
 $links = [
-    'トップ' => 'index.php',
+    'ユーザー一覧' => 'index.php',
     'ログアウト' => 'logout.php',
 ];
-$content = 'user/t_index.php';
+$content = 'user/t_register.php';
 include '../views/layout.php';
