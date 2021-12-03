@@ -14,6 +14,7 @@ $users->userRegister();
 // テンプレートの読み込み
 $title = 'ユーザー登録';
 $links = [
+    'トップ' => '../index.php',
     'ユーザー一覧' => 'index.php',
     'ログアウト' => 'logout.php',
 ];

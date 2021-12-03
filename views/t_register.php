@@ -1,6 +1,5 @@
 <form action="register.php" method="POST" class="register-form">
     <div>
-        <p class="validate"><?= $message; ?></p>
         <table>
             <tr>
                 <td>日付</td>

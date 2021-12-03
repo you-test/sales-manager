@@ -18,8 +18,8 @@
                     <td>
                         <form method="POST">
                             <input type="hidden" name="id">
-                            <button type="submit">更新</button>
-                            <button type="submit">削除</button>
+                            <button type="submit" formaction="update.php">更新</button>
+                            <button type="submit" formaction="delete.php">削除</button>
                         </form>
                     </td>
                 </tr>
