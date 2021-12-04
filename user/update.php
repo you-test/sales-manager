@@ -31,5 +31,5 @@ $links = [
     'ユーザー一覧' => 'index.php',
     'ログアウト' => 'logout.php',
 ];
-$content = 'user/t_update.php';
-include '../views/layout.php';
+$content = '../views/user/t_update.php';
+include '../views/user/layout.php';

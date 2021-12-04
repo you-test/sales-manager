@@ -153,9 +153,10 @@ header {
 
 // register, fix
 .register-form,
-.fix-form {
+.fix-form,
+.update-form {
   &>div {
-    width: 300px;
+    width: 400px;
     margin: 0 auto;
 
     table {
@@ -186,3 +187,22 @@ header {
     }
   }
 }
+
+// user index
+.register-link {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+// update
+.update-form {
+  .btn {
+    width: 60px;
+
+    &:last-child {
+      margin-left: 120px;
+    }
+  }
+}
+
+// user register

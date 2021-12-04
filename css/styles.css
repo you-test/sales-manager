@@ -150,28 +150,33 @@ header nav a {
 }
 
 .register-form > div,
-.fix-form > div {
-  width: 300px;
+.fix-form > div,
+.update-form > div {
+  width: 400px;
   margin: 0 auto;
 }
 
 .register-form > div table,
-.fix-form > div table {
+.fix-form > div table,
+.update-form > div table {
   padding: 5px;
 }
 
 .register-form > div table td,
-.fix-form > div table td {
+.fix-form > div table td,
+.update-form > div table td {
   padding: 5px;
 }
 
 .register-form > div table input,
-.fix-form > div table input {
+.fix-form > div table input,
+.update-form > div table input {
   height: 30px;
 }
 
 .register-form > div .btn,
-.fix-form > div .btn {
+.fix-form > div .btn,
+.update-form > div .btn {
   margin-left: 75px;
 }
 
@@ -181,4 +186,17 @@ header nav a {
 
 .fix-form .btn:last-child {
   margin-left: 15px;
+}
+
+.register-link {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.update-form .btn {
+  width: 60px;
+}
+
+.update-form .btn:last-child {
+  margin-left: 120px;
 }

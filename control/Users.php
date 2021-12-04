@@ -75,4 +75,15 @@ class Users
             }
         }
     }
+
+    // ユーザーの削除
+    public function deleteUser() {
+        $id = $_GET['id'];
+
+        $sql = "DELETE FROM users WHERE id = $id";
+        $statement = $this->pdo->query($sql);
+        $statement->execute();
+
+        header('Location: index.php');
+    }
 }

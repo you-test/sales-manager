@@ -1,5 +1,12 @@
-<a href="register.php">新規登録</a>
+<div class="register-link">
+    <a href="register.php">新規登録</a>
+</div>
 <div class="list-wrapper">
+    <?php
+        if (count($usersdata) === 0):
+            echo '[ユーザーが登録されていません]';
+        else:
+    ?>
     <table>
         <thead>
             <tr class="table-title">
@@ -26,4 +33,5 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+    <?php endif; ?>
 </div>
