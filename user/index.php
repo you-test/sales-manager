@@ -13,7 +13,8 @@ $usersdata = $users->getUsersData();
 // テンプレートの読み込み
 $title = 'ユーザー一覧';
 $links = [
-    'トップ' => 'index.php',
+    'トップ' => '../index.php',
+    'ユーザー一覧' => 'index.php',
     'ログアウト' => 'logout.php',
 ];
 $content = 'user/t_index.php';

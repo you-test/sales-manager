@@ -70,6 +70,7 @@ class Users
             $result = $statement->execute();
 
             if ($result) {
+                $session['id'] = '';
                 header('Location: index.php');
             }
         }

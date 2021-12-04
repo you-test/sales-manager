@@ -16,8 +16,8 @@
                     <td><?= $userdata['name']; ?></td>
                     <td><?= $userdata['mail']; ?></td>
                     <td>
-                        <form method="POST">
-                            <input type="hidden" name="id">
+                        <form method="GET">
+                            <input type="hidden" name="id" value="<?= $userdata['id']; ?>">
                             <button type="submit" formaction="update.php">更新</button>
                             <button type="submit" formaction="delete.php">削除</button>
                         </form>

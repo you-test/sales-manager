@@ -11,19 +11,18 @@ $pdo = Database::dbConnect();
 $users = new Users($pdo);
 
 // 一覧ページから送られるユーザーIDを取得して保持
-if (!isset($_SESSION['id'])) {
-    $_SESSION['id'] = $_POST['id'];
-    $id = $_SESSION['id'];
+if ($_GET['id']) {
+    $_SESSION['id'] = $_GET['id'];
 }
+$id = $_SESSION['id'];
 
-var_dump($_POST['id']);
 var_dump($_SESSION['id']);
-
-// 更新画面にきたときに最初に入れておく値の取得
-$userdata = $users->getUpdateUserData($id);
 
 // データのアップデート処理
 $users->updateUser();
+
+// 更新画面にきたときに最初に入れておく値の取得
+$userdata = $users->getUpdateUserData($id);
 
 // テンプレートの読み込み
 $title = 'ユーザー情報編集';

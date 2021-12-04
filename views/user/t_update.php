@@ -11,7 +11,7 @@
             </tr>
             <tr>
                 <td>パスワード</td>
-                <td><input type="text" name="password" value="<?= $userdata['password']; ?>"></td>
+                <td><input type="text" name="password"></td>
             </tr>
         </table>
         <button type="submit" class="btn">登録</button>
