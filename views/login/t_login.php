@@ -4,8 +4,8 @@
         <input type="text" name="mail" id="mail">
     </div>
     <div>
-        <label for="mail">パスワード</label>
-        <input type="text" name="mail" id="mail">
+        <label for="password">パスワード</label>
+        <input type="text" name="password" id="password">
     </div>
     <button type="submit">ログイン</button>
 </form>

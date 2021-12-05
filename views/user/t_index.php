@@ -1,4 +1,4 @@
-<div class="register-link">
+<div class="user-register-link">
     <a href="register.php">新規登録</a>
 </div>
 <div class="list-wrapper">
