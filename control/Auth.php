@@ -1,5 +1,6 @@
 <?php
 
+
 class Auth
 {
     private $pdo;
@@ -12,9 +13,21 @@ class Auth
     // ログイン処理
     public function login()
     {
+        require_once '../common/Validation.php';
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail = $_POST['mail'];
             $password = $_POST['password'];
+            $_SESSION['errors'] = [];
+
+            // test
+            Validation::test();
+            // バリデーションチェック
+            Validation::emptyCheck($_SESSION['errors'], $mail, 'メールアドレスを入力してください。');
+
+            if ($_SESSION['errors']) {
+                header('Location: index.php');
+            }
 
             $sql = "SELECT password FROM users WHERE mail = :mail";
             $statement = $this->pdo->prepare($sql);
@@ -31,4 +44,8 @@ class Auth
             }
         }
     }
+
+    // ログアウト処理
+
+    // ログインしているかのチェック
 }

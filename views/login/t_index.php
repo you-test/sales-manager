@@ -1,3 +1,15 @@
+<!-- バリデーションエラー表示 -->
+<?php
+    if (isset($_SESSION['errors'])) {
+        echo '<ul class="alert">';
+        foreach ($_SESSION['errors'] as $error) {
+            echo  "<li>{$error}</li>";
+        }
+        echo '</ul>';
+
+        unset($_SESSION['errors']);
+    }
+?>
 <form action="" method="post">
     <div>
         <label for="mail">メールアドレス</label>
