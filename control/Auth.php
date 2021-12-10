@@ -20,8 +20,6 @@ class Auth
             $password = $_POST['password'];
             $_SESSION['errors'] = [];
 
-            // test
-            Validation::test();
             // バリデーションチェック
             Validation::emptyCheck($_SESSION['errors'], $mail, 'メールアドレスを入力してください。');
 
