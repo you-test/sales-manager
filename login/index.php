@@ -11,6 +11,8 @@ $auth = new Auth($pdo);
 
 $auth->login();
 
+print_r($_SESSION['errors']);
+
 $title = 'ログイン';
 $links = [];
 $content = '../views/login/t_index.php';

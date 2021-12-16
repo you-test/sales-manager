@@ -205,4 +205,26 @@ header {
   }
 }
 
-// user register
+// login
+.login-form {
+  width: 400px;
+  margin: 0 auto;
+
+  div {
+    text-align: center;
+    margin-bottom: 20px;
+    label {
+      display: inline-block;
+      width: 100px;
+    }
+
+    input {
+      height: 30px;
+    }
+  }
+
+  .btn {
+    display: block;
+    margin: 0 auto;
+  }
+}

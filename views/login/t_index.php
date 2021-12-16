@@ -10,7 +10,7 @@
         unset($_SESSION['errors']);
     }
 ?>
-<form action="" method="post">
+<form action="" method="post" class="login-form">
     <div>
         <label for="mail">メールアドレス</label>
         <input type="text" name="mail" id="mail">
@@ -19,5 +19,5 @@
         <label for="password">パスワード</label>
         <input type="text" name="password" id="password">
     </div>
-    <button type="submit">ログイン</button>
+    <button type="submit" class="btn">ログイン</button>
 </form>
