@@ -1,5 +1,8 @@
 <?php
 
+// セッションの設定
+session_start();
+
 // データベース接続の各定数
 define('DSN', 'mysql:host=localhost;dbname=sales_manager;charset=utf8mb4');
 define('DB_USER', 'root');

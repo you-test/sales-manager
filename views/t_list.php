@@ -7,7 +7,7 @@
     <a href="register.php" class="register-link">新規登録</a>
 </div>
 <div class="list-wrapper">
-    <?php if (count($sales_data) === 0): ?>
+    <?php if (count($salesData) === 0): ?>
         <?= '<div>[ データがありません ]</div>'; ?>
     <?php else: ?>
     <table>
@@ -21,15 +21,15 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($sales_data as $sales_daily): ?>
+            <?php foreach ($salesData as $salesDaily): ?>
                 <tr>
-                    <td  class="table-date"><?= $sales_daily['sales_date']; ?></td>
-                    <td class="table-white"><?= number_format($sales_daily['sales_amount']); ?></td>
-                    <td class="table-white"><?= number_format($sales_daily['food_costs']); ?></td>
-                    <td class="table-white"><?= number_format($sales_daily['labor_costs']); ?></td>
+                    <td  class="table-date"><?= $salesDaily['sales_date']; ?></td>
+                    <td class="table-white"><?= number_format($salesDaily['sales_amount']); ?></td>
+                    <td class="table-white"><?= number_format($salesDaily['food_costs']); ?></td>
+                    <td class="table-white"><?= number_format($salesDaily['labor_costs']); ?></td>
                     <td class="table-white">
                         <form method="POST">
-                            <input type="hidden" name="id" value="<?= $sales_daily['id']; ?>">
+                            <input type="hidden" name="id" value="<?= $salesDaily['id']; ?>">
                             <button type="submit" formaction="fix.php">更新</button>
                             <button type="submit" formaction="delete.php">削除</button>
                         </form>

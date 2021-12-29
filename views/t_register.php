@@ -17,7 +17,15 @@
                 <td>人件費</td>
                 <td><input type="text" name="labor_costs"></td>
             </tr>
+            <tr>
+                <td>日報</td>
+                <td>
+                    <textarea name="daily_report" id="daily-report" cols="30" rows="10"></textarea>
+                </td>
+            </tr>
         </table>
+        <input type="checkbox" name="send_check" id="send-check" value="true">
+        <label for="send-check">日報を送信する</label>
         <button type="submit" class="btn">データの登録</button>
     </div>
 </form>
