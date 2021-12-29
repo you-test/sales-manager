@@ -101,7 +101,7 @@ class Sales
             mb_internal_encoding("UTF-8");
 
             // 送信処理
-            $mailAdress = 'yusuke.page2021@gmail.com';
+            $mailAdress = '';
             $subject = "{$salesDate}日報";
             $header = 'From: Sales Manager';
             $sendMailResult = mb_send_mail($mailAdress, $subject, $body, $header);
