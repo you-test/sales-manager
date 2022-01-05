@@ -87,6 +87,8 @@ class Sales
         }
     }
 
+    // 日報送信先アドレスの取得
+
     // 日報の送信
     public function sendDailyReport()
     {

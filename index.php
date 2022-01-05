@@ -1,5 +1,5 @@
 <?php
-
+require_once 'common/config.php';
 require_once 'control/Auth.php';
 
 // ログインチェック
