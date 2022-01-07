@@ -10,7 +10,7 @@ class Mail
     }
 
     // メールアドレスの新規登録
-    public function createMail()
+    public function createMail(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['new_mail'])) {
             $mail = $_POST['new_mail'];
@@ -24,7 +24,7 @@ class Mail
     }
 
     // 登録済みメールアドレスの取得
-    public function getMails()
+    public function getMails(): array
     {
         $statement = $this->pdo->query("SELECT id, mail FROM sendreport_adress");
         $statement->execute();
@@ -34,7 +34,7 @@ class Mail
     }
 
     // メールアドレスリストの登録
-    public function registerMails()
+    public function registerMails(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['mail']) {
             $mails = $_POST['mail'];
