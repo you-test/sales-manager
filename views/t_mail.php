@@ -7,8 +7,8 @@
         <table>
             <?php foreach ($mails as $mail): ?>
                 <tr>
-                    <td><?= $mail['id'] ?></td>
                     <td><input type="text" name="mail[]" value="<?= $mail['mail'] ?>"></td>
+                    <input type="hidden" name="id[]" value="<?= $mail['id'] ?>">
                 </tr>
             <?php endforeach; ?>
         </table>

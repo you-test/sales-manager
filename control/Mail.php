@@ -38,8 +38,19 @@ class Mail
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['mail']) {
             $mails = $_POST['mail'];
+            $ids = $_POST['id'];
+            $mailLists = [];
+            foreach ($mails as $key => $mail) {
+                $mailLists[] = [$mail, (int) $ids[$key]];
+            }
+            print_r($mailLists);
 
-            $statement = $this->pdo->prepare("UPDATE sendreport_adress SET");
+            foreach ($mailLists as $mailList) {
+                $statement = $this->pdo->prepare("UPDATE sendreport_adress SET mail = :mail WHERE id = :id");
+                $statement->bindValue(':mail', $mailList[0]);
+                $statement->bindValue(':id', $mailList[1]);
+                $statement->execute();
+            }
         }
     }
 }
