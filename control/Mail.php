@@ -53,4 +53,14 @@ class Mail
             }
         }
     }
+
+    // メールアドレスの削除
+    public function deleteMail(): void
+    {
+        $id = $_POST['id'];
+        $statement = $this->pdo->query("DELETE FROM sendreport_adress WHERE id = $id");
+        $statement->execute();
+
+        header('Location: mail.php');
+    }
 }

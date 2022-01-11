@@ -158,19 +158,22 @@ header nav a {
 
 .register-form > div table,
 .fix-form > div table,
-.update-form > div table {
+.update-form > div table,
+.mail-list-wrapper > table {
   padding: 5px;
 }
 
 .register-form > div table td,
 .fix-form > div table td,
-.update-form > div table td {
+.update-form > div table td,
+.mail-list-wrapper > table td {
   padding: 5px;
 }
 
 .register-form > div table input,
 .fix-form > div table input,
-.update-form > div table input {
+.update-form > div table input,
+.mail-list-wrapper table input {
   height: 30px;
 }
 
@@ -222,5 +225,10 @@ header nav a {
 
 .login-form .btn {
   display: block;
+  margin: 0 auto;
+}
+
+.mail-list-wrapper {
+  width: 500px;
   margin: 0 auto;
 }
