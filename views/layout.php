@@ -17,7 +17,17 @@
     </header>
     <div class="container">
         <h2 class="title"><?php echo $title; ?></h2>
-        <?php include $content; ?>
+        <?php if (isset($_SESSION['errors'])): ?>
+            <ul class="alert">
+                <?php foreach ($_SESSION['errors'] as $error): ?>
+                    <li><?= $error ?></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php
+            endif;
+            unset($_SESSION['errors']);
+            include $content;
+        ?>
     </div>
 </body>
 </html>

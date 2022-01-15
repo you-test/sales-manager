@@ -42,12 +42,33 @@ class Validation
         }
     }
 
+    // 半角数字チェック
+    public static function halfNumberCheck(array &$errors, string $checkValue, string $message): void
+    {
+        if (preg_match("/^[0-9]+$/", $checkValue) == false) {
+            array_push($errors, $message);
+        }
+    }
+
     // アドレス重複チェック
     public static function duplicateMailCheck(array &$errors, string $checkValue, string $message, object $pdo): void
     {
         $sql = "SELECT id FROM users WHERE mail = :mail";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(':mail', $checkValue);
+        $statement->execute();
+        $result = $statement->fetch();
+
+        if ($result) {
+            array_push($errors, $message);
+        }
+    }
+
+    public static function duplicateDateCheck(array &$errors, string $checkValue, string $message, object $pdo): void
+    {
+        $sql = "SELECT id FROM sales WHERE sales_date = :salesDate";
+        $statement = $pdo->prepare($sql);
+        $statement->bindValue(':salesDate', $checkValue);
         $statement->execute();
         $result = $statement->fetch();
 
